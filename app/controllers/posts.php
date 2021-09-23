@@ -1,8 +1,7 @@
 <?php
-
-require_once(ROOT_PATH . "/app/database/db.php");
-require_once(ROOT_PATH . "/app/helpers/middleware.php");
-require_once(ROOT_PATH . "/app/helpers/validatePost.php");
+require_once(ROOT_PATH . "../../app/database/db.php");
+require_once(ROOT_PATH . "../../app/helpers/middleware.php");
+require_once(ROOT_PATH . "../../app/helpers/validatePost.php");
 
 class PostsController
 {
@@ -12,14 +11,6 @@ class PostsController
     {
       $this->dbModel = new DbModel();
     }
-
-    // public function selectAllPosts($table)
-    // {
-    //   // Création d'un objet
-    //   $posts = $this->dbModel->selectAll($table);
-    //   // Appel d'une fonction de cet objet
-    //   return $posts;
-    // }
 
     public function selectOnePost($table, $conditions)
     {
@@ -65,7 +56,7 @@ class PostsController
 
         $_SESSION ['message'] = "Le post a été actualisé avec succès.";
         $_SESSION['type'] = "success";
-        header("location: " . BASE_URL . "/admin/posts/index.php");
+        header("location: " . BASE_URL . "/views/admin/posts/index.php?admin=posts");
         exit();
     }
 
@@ -75,7 +66,7 @@ class PostsController
 
         $_SESSION ['message'] = "Le post a été créé avec succès.";
         $_SESSION['type'] = "success";
-        header("location: " . BASE_URL . "/admin/posts/index.php");
+        header("location: " . BASE_URL . "/views/admin/posts/index.php?admin=posts");
     }
 
     public function deletePost($table, $id)
@@ -84,7 +75,7 @@ class PostsController
 
       $_SESSION ['message'] = "Le post a été effacé avec succès.";
       $_SESSION['type'] = "success";
-      header("location: " . BASE_URL . "/admin/posts/index.php");
+      header("location: " . BASE_URL . "/views/admin/posts/index.php?admin=posts");
       exit();
     }
 }

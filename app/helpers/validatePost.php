@@ -1,5 +1,5 @@
 <?php
-include_once(ROOT_PATH . "/app/database/db.php");
+require_once(ROOT_PATH . "../../app/database/db.php");
 
 class ValidatePost
 {

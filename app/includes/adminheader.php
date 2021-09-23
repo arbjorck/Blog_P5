@@ -1,7 +1,5 @@
-<?php //include("../path.php"); ?>
-
 <header>
-    <a class="logo" href="<?php echo BASE_URL . '/index.php'; ?>">
+    <a class="logo" href="<?php echo BASE_URL . ''; ?>">
         <h1 class="logo-text"><span>Jean</span>Forteroche</h1>
     </a>
     <i class="fa fa-bars menu-toggle"></i>
@@ -15,7 +13,7 @@
                 </a>
                 <ul>
                     <!-- <li><a href="#">Tableau de Bord</a></li> -->
-                    <li><a href="<?php echo BASE_URL . '/logout.php'; ?>" class="logout">Se déconnecter</a></li>
+                    <li><a href="<?php echo BASE_URL . '/views/public/logout.php'; ?>" class="logout">Se déconnecter</a></li>
                 </ul>
             </li>
         <?php endif; ?>

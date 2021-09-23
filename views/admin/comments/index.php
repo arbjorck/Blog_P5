@@ -6,24 +6,7 @@ include(ROOT_PATH . "../../index.php");
 <!DOCTYPE html>
 <html lang="en"> 
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-        <!-- Font awesome -->
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-
-        <!-- Google Font -->
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
-        <!-- Custom Styling -->
-        <link rel="stylesheet" href="../../../assets/css/style.css">
-        <link rel="stylesheet" href="../../../assets/css/style_media.css">
-
-        <!-- Admin Styling -->
-        <link rel="stylesheet" href="../../../assets/css/admin.css"> 
-        <link rel="stylesheet" href="../../../assets/css/admin_media.css">
+        <?php include(ROOT_PATH . "../../app/includes/adminHead.php"); ?>
 
         <title>Admin - Gérer Commentaires</title>
     </head>
@@ -31,13 +14,13 @@ include(ROOT_PATH . "../../index.php");
 
     <body>
     <!-- Header -->
-    <?php include(ROOT_PATH. "../../app/includes/adminheader.php");?>
+    <?php include(ROOT_PATH. "../../app/includes/adminHeader.php");?>
 
         <!-- Admin Page Wrapper -->
         <div class="admin-wrapper"> 
 
             <!-- Left Sidebar -->
-            <?php include(ROOT_PATH. "../../app/includes/adminsidebar.php");?>
+            <?php include(ROOT_PATH. "../../app/includes/adminSidebar.php");?>
 
             <!-- Admin Content -->
             <div class="admin-content">
@@ -48,11 +31,13 @@ include(ROOT_PATH . "../../index.php");
                     <?php include(ROOT_PATH . "../../app/includes/messages.php"); ?>
                     <table>
                         <thead>
-                            <th>SN</th>
-                            <th>Post</th>
-                            <th>Commentaire</th>
-                            <th>Auteur</th>
-                            <th colspan="3">Action</th>
+                            <tr>
+                                <th>SN</th>
+                                <th>Post</th>
+                                <th>Commentaire</th>
+                                <th>Auteur</th>
+                                <th colspan="3">Action</th>
+                            </tr>
                         </thead>
                         <tbody>
                             <?php foreach($getCommentsForAdmin as $key => $comment): ?>

@@ -5,11 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-<<<<<<< HEAD
-        'reference' => 'ac244c4ce2628f23fa3b90f7851509065f4fab42',
-=======
-        'reference' => '31b70b379ad58ce9eaae564004f13d2c2bc0fe3b',
->>>>>>> 19b4b8041c4b42677a811bda6ffadb30e37fe68f
+        'reference' => 'be4ba03155c484af70d6b09e1a3153c2a712a739',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -20,11 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-<<<<<<< HEAD
-            'reference' => 'ac244c4ce2628f23fa3b90f7851509065f4fab42',
-=======
-            'reference' => '31b70b379ad58ce9eaae564004f13d2c2bc0fe3b',
->>>>>>> 19b4b8041c4b42677a811bda6ffadb30e37fe68f
+            'reference' => 'be4ba03155c484af70d6b09e1a3153c2a712a739',
             'dev_requirement' => false,
         ),
         'stripe/stripe-php' => array(

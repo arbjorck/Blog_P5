@@ -6,13 +6,8 @@ require(ROOT_PATH . "../../index.php");
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<<<<<<< HEAD:views/public/single.php
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-    <!-- Font awesome -->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <?php include(ROOT_PATH . "../../app/includes/head.php"); ?>
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -22,10 +17,6 @@ require(ROOT_PATH . "../../index.php");
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/style_media.css">
 
-=======
-    <?php include(ROOT_PATH . "../../app/includes/head.php"); ?>
-    <meta name="description" content="Blog">
->>>>>>> 19b4b8041c4b42677a811bda6ffadb30e37fe68f:views/public/single.php
     <title><?php echo $post['title']; ?> | JeanForteroche</title>
 </head>
 

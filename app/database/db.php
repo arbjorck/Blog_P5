@@ -1,5 +1,4 @@
 <?php
-
 require_once('connect.php');
 
 class DbModel
@@ -170,8 +169,8 @@ class DbModel
 
         $stmt = $this->executeQuery($sql, ['published' => 1, 'topic_id' => $topicId]);
         $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $rec = $records[0];
-        return $rec;
+    //$rec = $records[0];
+        return $records;
     }
 
     public function searchPosts($term)

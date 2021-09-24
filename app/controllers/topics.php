@@ -1,7 +1,7 @@
 <?php
-require(ROOT_PATH . "/app/database/db.php");
-include(ROOT_PATH . "/app/helpers/middleware.php");
-include(ROOT_PATH . "/app/helpers/validateTopic.php");
+require(ROOT_PATH . "../../app/database/db.php");
+require(ROOT_PATH . "../../app/helpers/middleware.php");
+require(ROOT_PATH . "../../app/helpers/validateTopic.php");
 
 class TopicsController
 {
@@ -26,7 +26,7 @@ class TopicsController
 
     $_SESSION['message'] = 'Le thème a été créé avec succès.';
     $_SESSION['type'] = 'success';
-    header('location: ' . BASE_URL . '/admin/topics/index.php');
+    header('location: ' . BASE_URL . '/views/admin/topics/index.php?admin=topics');
     exit();
   }
 
@@ -42,7 +42,7 @@ class TopicsController
 
     $_SESSION['message'] = 'Thème suprimé avec succès';
     $_SESSION['type'] = 'success';
-    header('location: ' . BASE_URL . '/admin/topics/index.php');
+    header('location: ' . BASE_URL . '/views/admin/topics/index.php?admin=topics');
     exit();
   }
 
@@ -52,7 +52,7 @@ class TopicsController
 
     $_SESSION['message'] = 'Thème actualisé avec succès';
     $_SESSION['type'] = 'success';
-    header('location: ' . BASE_URL . '/admin/topics/index.php');
+    header('location: ' . BASE_URL . '/views/admin/topics/index.php?admin=topics');
     exit();
   }
 }

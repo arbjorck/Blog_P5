@@ -2,7 +2,6 @@
 
 class ValidateComment
 {
-
     public function validateComment($comment) 
     {
         $errors =  array();

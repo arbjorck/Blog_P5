@@ -2,7 +2,7 @@
         <div class="foter-content">
 
             <div class="footer-section about">
-                <a href="<?php echo BASE_URL . '/index.php' ?>" class="logo">
+                <a href="<?php echo BASE_URL . ''?>" class="logo">
                 <h1 class="logo-text"><span>Jean</span>Forteroche</h1>
                 </a>                
                 <p>
@@ -13,10 +13,10 @@
                     <span><i class="fas fa-envelope"></i>&nbsp; jeanforteroche@blog.com</span>
                 </div>
                 <div class="socials">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/?hl=fr"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/?lang=fr"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
 
@@ -28,7 +28,7 @@
                     <a href="#"><li>Team</li></a>
                     <a href="#"><li>Writters</li></a>
                     <a href="#"><li>Gallery</li></a>
-                    <a href="<?php echo BASE_URL . '/legalNotice.php' ?>"><li>Terms and conditions</li></a>
+                    <a href="<?php echo BASE_URL . '/views/public/legalNotice.php' ?>"><li>Terms and conditions</li></a>
                 </ul>
             </div>
 
@@ -43,7 +43,6 @@
                     </button>
                 </form>
             </div>
-
         </div>
         <div class="footer-bottom">
             &copy; copyright-informations / Designed by Ana Bjorck

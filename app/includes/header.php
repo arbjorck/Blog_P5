@@ -1,10 +1,11 @@
 <header>
-        <a href="<?php echo BASE_URL . '/index.php' ?>" class="logo">
-            <h1 class="logo-text"><span>Jean</span>Forteroche</h1>
+        <a href="<?php echo BASE_URL . ''?>" class="logo">
+            <h1 class="logo-text"><span>Hidden</span>Truth</h1>
         </a>
         <i class="fa fa-bars menu-toggle"></i>
         <ul class="nav">
-            <li><a href="<?php echo BASE_URL . '/index.php' ?>">Accueil</a></li>
+            <li><a href="<?php echo BASE_URL . '' ?>">Accueil</a></li>
+            <li><a href="<?php echo BASE_URL . '/index.php?give' ?>">Faire un don</a></li>
 
             <?php if (isset($_SESSION['id'])) : ?>
             <li>
@@ -15,15 +16,15 @@
                 </a>
                 <ul>
                     <?php if($_SESSION['admin']): ?>
-                        <li><a href="<?php echo BASE_URL . '/admin/dashboard.php' ?>" class="dashboard">Tableau de Bord</a></li>
+                        <li><a href="<?php echo BASE_URL . '/views/admin/dashboard.php?dashboard' ?>" class="dashboard">Tableau de Bord</a></li>
                     <?php endif; ?>
 
-                    <li><a href="<?php echo BASE_URL . '/logout.php' ?>" class="logout">Se déconnecter</a></li>
+                    <li><a href="<?php echo BASE_URL . '/views/public/logout.php' ?>" class="logout">Se déconnecter</a></li>
                 </ul>
             </li>
             <?php else: ?>
-                <li><a href="<?php echo BASE_URL . '/register.php' ?>">Créer un compte</a></li>
-                <li><a href="<?php echo BASE_URL . '/login.php' ?>">Se connecter</a></li>
+                <li><a href="<?php echo BASE_URL . '/views/public/register.php?register' ?>">Créer un compte</a></li>
+                <li><a href="<?php echo BASE_URL . '/views/public/login.php?login' ?>">Se connecter</a></li>
             <?php endif; ?>
         </ul>
 </header>

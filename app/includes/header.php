@@ -1,11 +1,18 @@
 <header>
         <a href="<?php echo BASE_URL . ''?>" class="logo">
+<<<<<<< HEAD
             <h1 class="logo-text"><span>Hidden</span>Truth</h1>
+=======
+            <h1 class="logo-text"><span>Jean</span>Forteroche</h1>
+>>>>>>> 19b4b8041c4b42677a811bda6ffadb30e37fe68f
         </a>
         <i class="fa fa-bars menu-toggle"></i>
         <ul class="nav">
             <li><a href="<?php echo BASE_URL . '' ?>">Accueil</a></li>
+<<<<<<< HEAD
             <li><a href="<?php echo BASE_URL . '/index.php?give' ?>">Faire un don</a></li>
+=======
+>>>>>>> 19b4b8041c4b42677a811bda6ffadb30e37fe68f
 
             <?php if (isset($_SESSION['id'])) : ?>
             <li>

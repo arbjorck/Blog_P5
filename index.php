@@ -1,6 +1,11 @@
 <?php
+<<<<<<< HEAD
 // error_reporting(E_ALL);
 // ini_set('display_errors', true);
+=======
+error_reporting(E_ALL);
+ini_set('display_errors', true);
+>>>>>>> 19b4b8041c4b42677a811bda6ffadb30e37fe68f
 session_start();
 
 require_once("views/path.php");
@@ -13,8 +18,11 @@ require_once(ROOT_PATH . "../../app/helpers/middleware.php");
 require_once(ROOT_PATH . "../../app/helpers/validateTopic.php");
 require_once(ROOT_PATH . "../../app/helpers/validateComments.php");
 require_once(ROOT_PATH . "../../app/helpers/validateUser.php");
+<<<<<<< HEAD
 require_once(ROOT_PATH . "../../app/helpers/validateAmount.php");
 require_once(ROOT_PATH . "../../vendor/autoload.php");
+=======
+>>>>>>> 19b4b8041c4b42677a811bda6ffadb30e37fe68f
 
 try {
   $errors = array();
@@ -319,8 +327,13 @@ try {
     if (count($errors) === 0) {      
         $usersController = new UsersController();
         $user = $usersController->selectOneUser('users', ['username' => $_POST['username']]);
+<<<<<<< HEAD
         if ($user && password_verify($_POST['password'], $user['password'])) {
 
+=======
+
+        if ($user && password_verify($_POST['password'], $user['password'])) {
+>>>>>>> 19b4b8041c4b42677a811bda6ffadb30e37fe68f
           $usersController = new UsersController();
           $loggedUser = $usersController->loggedUser($user);
         }else {
@@ -460,6 +473,7 @@ try {
     $adminOnly = $middleware->adminOnly();
     
     require(ROOT_PATH . "../../views/admin/dashboard.php");
+<<<<<<< HEAD
   } elseif (isset($_GET['give'])) {
     
     require(ROOT_PATH . "../../views/public/give.php");
@@ -494,6 +508,10 @@ try {
   } elseif (isset($_GET['paymentsuccess'])) {
     
     require(ROOT_PATH . "../../views/public/paymentSuccess.php");
+=======
+  } elseif (isset($_GET['notice'])) { 
+    require(ROOT_PATH . "../../views/admin/dashboard.php");
+>>>>>>> 19b4b8041c4b42677a811bda6ffadb30e37fe68f
   } else {
     $postsController = new PostsController();
     $getPublishedPosts = $postsController->getPublishedPosts();
@@ -507,3 +525,8 @@ try {
   $errors = $e->getMessage();
   echo($errors);
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 19b4b8041c4b42677a811bda6ffadb30e37fe68f

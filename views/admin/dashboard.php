@@ -32,13 +32,21 @@ $errors = array();
 
     <body>
     <!-- Header -->
+<<<<<<< HEAD:views/admin/dashboard.php
     <?php include(ROOT_PATH. "../../app/includes/adminheader.php");?>
+=======
+    <?php include(ROOT_PATH. "../../app/includes/adminHeader.php");?>
+>>>>>>> 19b4b8041c4b42677a811bda6ffadb30e37fe68f:views/admin/dashboard.php
 
         <!-- Admin Page Wrapper -->
         <div class="admin-wrapper"> 
 
             <!-- Left Sidebar -->
+<<<<<<< HEAD:views/admin/dashboard.php
             <?php include(ROOT_PATH. "../../app/includes/adminsidebar.php");?>
+=======
+            <?php include(ROOT_PATH. "../../app/includes/adminSidebar.php");?>
+>>>>>>> 19b4b8041c4b42677a811bda6ffadb30e37fe68f:views/admin/dashboard.php
 
             <!-- Admin Content -->
             <div class="admin-content">

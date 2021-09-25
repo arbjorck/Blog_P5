@@ -1,5 +1,3 @@
-<?php var_dump($name); ?>
-
 <div class="footer">
     <div class="foter-content">
 

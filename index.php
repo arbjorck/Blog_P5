@@ -1,6 +1,6 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', true);
+// error_reporting(E_ALL);
+// ini_set('display_errors', true);
 session_start();
 
 require_once("views/path.php");
@@ -394,7 +394,6 @@ try {
         $commentsController = new CommentsController();
         $createComment = $commentsController->createComment('comments', $_POST);
     }else {
-      var_dump($_GET);
         $post_id = $_GET['id'];
         $comment = $_POST['comment'];
         header("location: " . BASE_URL . "/views/public/single.php?id=" . $_GET['id']);

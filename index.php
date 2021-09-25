@@ -14,7 +14,6 @@ require_once(ROOT_PATH . "../../app/helpers/validateTopic.php");
 require_once(ROOT_PATH . "../../app/helpers/validateComments.php");
 require_once(ROOT_PATH . "../../app/helpers/validateUser.php");
 require_once(ROOT_PATH . "../../app/helpers/validateAmount.php");
-require_once(ROOT_PATH . "../../app/helpers/validateContactForm.php");
 require_once(ROOT_PATH . "../../vendor/autoload.php");
 
 try {

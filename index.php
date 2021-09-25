@@ -1,6 +1,6 @@
 <?php
-// error_reporting(E_ALL);
-// ini_set('display_errors', true);
+error_reporting(E_ALL);
+ini_set('display_errors', true);
 session_start();
 
 require_once("views/path.php");
@@ -14,6 +14,7 @@ require_once(ROOT_PATH . "../../app/helpers/validateTopic.php");
 require_once(ROOT_PATH . "../../app/helpers/validateComments.php");
 require_once(ROOT_PATH . "../../app/helpers/validateUser.php");
 require_once(ROOT_PATH . "../../app/helpers/validateAmount.php");
+require_once(ROOT_PATH . "../../app/helpers/validateContactForm.php");
 require_once(ROOT_PATH . "../../vendor/autoload.php");
 
 try {
@@ -494,7 +495,10 @@ try {
   } elseif (isset($_GET['paymentsuccess'])) {
     
     require(ROOT_PATH . "../../views/public/paymentSuccess.php");
-  } else {
+  } elseif (isset($_GET['contactSuccess'])) {
+    
+    require(ROOT_PATH . "../../views/public/contactSuccess.php");
+  }else {
     $postsController = new PostsController();
     $getPublishedPosts = $postsController->getPublishedPosts();
 

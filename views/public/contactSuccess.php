@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<?php include(ROOT_PATH . "../../app/includes/head.php"); ?>
+    <?php include(ROOT_PATH . "../../app/includes/head.php"); ?>
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -20,7 +20,7 @@
     <?php include(ROOT_PATH . "../../app/includes/header.php"); ?>
 
     <div class="auth-content">
-        <p>Votre paiement a été validé avec succès.</br>Nous vous remercions pour votre générosité ! C'est grâce à vos dons que ce site est alimenté régulièrement.</p>
+        <p>Merci de nous avoir contacté ! Nous traiterons votre email dans les plus brefs délais.</p>
     </div>
  
 

@@ -34,7 +34,7 @@
  
     <!-- Page Wrapper -->
     <div class="page-wrapper"> 
-
+    <?php include(ROOT_PATH . "../../app/helpers/formErrors.php"); ?>
         <!-- Post Slider -->
         <div class="post-slider">
             <h2 class="slider-title">Tendances</h2>

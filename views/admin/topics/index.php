@@ -1,8 +1,3 @@
-<?php
-include("../../path.php");
-include(ROOT_PATH . "../../index.php");
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -25,7 +20,7 @@ include(ROOT_PATH . "../../index.php");
             <!-- Admin Content -->
             <div class="admin-content">
                 <div class="button-group">
-                    <a href="create.php?create=topic" class="btn btn-big">Ajouter Thème</a>
+                    <a href="index.php?create=topic" class="btn btn-big">Ajouter Thème</a>
                     <a href="index.php?admin=topics" class="btn btn-big">Gérer Thèmes</a>
                 </div>
 
@@ -47,8 +42,8 @@ include(ROOT_PATH . "../../index.php");
                                 <tr>
                                     <td><?php echo $key + 1; ?></td>
                                     <td><?php echo $topic['name']; ?></td>
-                                    <td><a href="edit.php?edit_topic_id=<?php echo $topic['id']; ?>" class="edit">Éditer</a></td>
-                                    <td><a href="index.php?del_topic_id=<?php echo $topic['id']; ?>" class="delete">Effacer</a></td>                            
+                                    <td><a href="index.php?edit_topic_id=<?php echo $topic['id']; ?>" class="edit">Éditer</a></td>
+                                    <td><a href="index.php?del-topic-id=<?php echo $topic['id']; ?>" class="delete">Effacer</a></td>                            
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
@@ -69,7 +64,7 @@ include(ROOT_PATH . "../../index.php");
         <script src="https://cdn.ckeditor.com/ckeditor5/29.0.0/classic/ckeditor.js"></script>
 
         <!-- Custom Script -->
-        <script src="../../../assets/js/scripts.js"></script>
+        <script src="assets/js/scripts.js"></script>
 
     </body>
 </html> 

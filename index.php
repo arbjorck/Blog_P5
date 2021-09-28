@@ -53,7 +53,7 @@ try {
     $errors = $validatePosts->validatePost($_POST);
 
     if (!empty($_FILES['image']['name'])) {
-        $image_name = time() . ' ' . $_FILES['image']['name'];
+        $image_name = time() . '' . $_FILES['image']['name'];
         $destination = ROOT_PATH . "../../assets/images/" . $image_name;
 
         $result = move_uploaded_file($_FILES['image']['tmp_name'], $destination);
@@ -92,6 +92,28 @@ try {
 
         require(ROOT_PATH . "../../views/admin/posts/create.php");
     }
+  } elseif (isset($_POST['add-topic'])) {
+    // Création d'un objet
+    $middleware = new Middleware();
+    // Appel d'une fonction de cet objet
+    $adminOnly = $middleware->adminOnly();
+  
+    $validateTopic = new ValidateTopic($_POST);
+    $errors = $validateTopic->validateTopic($_POST);
+  
+    if (count($errors) === 0) {
+      unset($_POST['add-topic']);
+      $topicsController = new TopicsController();
+      $topic_id = $topicsController->createTopic('topics', $_POST);
+      $topics = $topicsController->getTopics('topics');
+
+      require(ROOT_PATH . "../../views/admin/topics/index.php");
+    } else {
+      $name = $_POST['name'];
+      $description = $_POST['description'];
+
+      require(ROOT_PATH . "../../views/admin/topics/create.php");
+    }
   } elseif (isset($_GET['create']) && $_GET['create'] === 'post') {
     $middleware = new Middleware();
     $adminOnly = $middleware->adminOnly();
@@ -125,6 +147,19 @@ try {
     $validatePosts = new ValidatePost($_POST);
     $errors = $validatePosts->validatePost($_POST);
 
+    if (!empty($_FILES['image']['name'])) {
+      $image_name = time() . '' . $_FILES['image']['name'];
+      $destination = ROOT_PATH . "../../assets/images/" . $image_name;
+
+      $result = move_uploaded_file($_FILES['image']['tmp_name'], $destination);
+
+      if ($result) {
+          $_POST['image'] = $image_name;
+      } else {
+          array_push($errors, "Le téléchargement de l'image a échoué.");
+      }
+    }
+
     if (count($errors) == 0) {
         $id = $_POST['id'];
         unset($_POST['update-post'], $_POST['id']);
@@ -137,7 +172,7 @@ try {
         $posts = $postsController->getPostsForAdmin('posts');
 
         require(ROOT_PATH . "../../views/admin/posts/index.php");
-    }else {
+    } else {
         $id = $_POST['id'];
         $title = $_POST['title'];
         $body = $_POST['body'];
@@ -245,15 +280,24 @@ try {
 
     $topicsController = new TopicsController();
     $topics = $topicsController->getTopics('topics');
+
+    require(ROOT_PATH . "../../views/admin/topics/index.php");
+
   } elseif (isset($_GET['create']) && $_GET['create'] === 'topic') {
     $middleware = new Middleware();
     $adminOnly = $middleware->adminOnly();
+
+    require(ROOT_PATH . "../../views/admin/topics/create.php");
+
   } elseif (isset($_GET['edit_topic_id'])) {
     $topicsController = new TopicsController();
     $topic = $topicsController->selectOneTopic('topics', ['id' => $_GET['edit_topic_id']]);
     $id = $topic['id'];
     $name = $topic['name'];
     $description = $topic['description'];
+
+    require(ROOT_PATH . "../../views/admin/topics/edit.php");
+
   } elseif (isset($_POST['update-topic'])) {
     $middleware = new Middleware();
     $adminOnly = $middleware->adminOnly();
@@ -267,35 +311,28 @@ try {
   
       $topicsController = new TopicsController();
       $topicUpdate = $topicsController->updateTopic('topics', $id, $_POST);
+      $topics = $topicsController->getTopics('topics');
+
+      require(ROOT_PATH . "../../views/admin/topics/index.php");  
     } else {
       $id = $_POST['id'];
       $name = $_POST['name'];
       $description = $_POST['description'];
+
+      require(ROOT_PATH . "../../views/admin/topics/create.php");
+  
     }
-  } elseif (isset($_GET['del_topic_id'])) {
+  } elseif (isset($_GET['del-topic-id'])) {
     $middleware = new Middleware();
     $adminOnly = $middleware->adminOnly();
   
-    $id = $_GET['del_topic_id'];
+    $id = $_GET['del-topic-id'];
     $topicsController = new TopicsController();
     $deleteTopic = $topicsController->deleteTopic('topics', $id);
-  } elseif (isset($_POST['add-topic'])) {
-    // Création d'un objet
-    $middleware = new Middleware();
-    // Appel d'une fonction de cet objet
-    $adminOnly = $middleware->adminOnly();
-  
-    $validateTopic = new ValidateTopic($_POST);
-    $errors = $validateTopic->validateTopic($_POST);
-  
-    if (count($errors) === 0) {
-      unset($_POST['add-topic']);
-      $topicsController = new TopicsController();
-      $topic_id = $topicsController->createTopic('topics', $_POST);
-    } else {
-      $name = $_POST['name'];
-      $description = $_POST['description'];
-    }
+    $topics = $topicsController->getTopics('topics');
+
+    require(ROOT_PATH . "../../views/admin/topics/index.php");
+
   } elseif (isset($_GET['admin']) && $_GET['admin'] === 'users') {
     $middleware = new Middleware();
     $adminOnly = $middleware->adminOnly();

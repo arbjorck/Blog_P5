@@ -1,8 +1,3 @@
-<?php
-include("../../path.php");
-include(ROOT_PATH . "../../index.php");
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -18,12 +13,12 @@ include(ROOT_PATH . "../../index.php");
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
         <!-- Custom Styling -->
-        <link rel="stylesheet" href="../../../assets/css/style.css">
-        <link rel="stylesheet" href="../../../assets/css/style_media.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/style_media.css">
 
         <!-- Admin Styling -->
-        <link rel="stylesheet" href="../../../assets/css/admin.css"> 
-        <link rel="stylesheet" href="../../../assets/css/admin_media.css">
+        <link rel="stylesheet" href="assets/css/admin.css"> 
+        <link rel="stylesheet" href="assets/css/admin_media.css">
 
         <title>Admin - Éditer Thème</title>
     </head>
@@ -42,14 +37,14 @@ include(ROOT_PATH . "../../index.php");
             <!-- Admin Content -->
             <div class="admin-content">
                 <div class="button-group">
-                    <a href="create.php?create=topic" class="btn btn-big">Ajouter Thème</a>
+                    <a href="index.php?create=topic" class="btn btn-big">Ajouter Thème</a>
                     <a href="index.php?admin=topics" class="btn btn-big">Gérer Thèmes</a>
                 </div>
 
                 <div class="content">
                     <h2 class="page-title">Éditer Thème</h2>
                     <?php include(ROOT_PATH . "../../app/helpers/formErrors.php"); ?>
-                    <form action="edit.php?edit_id=<?php echo $id ?>" method="post">
+                    <form action="index.php?edit_id=<?php echo $id ?>" method="post">
                         <input type="hidden" name="id" value="<?php echo $id; ?>" >
                         <div>
                             <label>Nom</label>
@@ -77,7 +72,7 @@ include(ROOT_PATH . "../../index.php");
         <script src="https://cdn.ckeditor.com/ckeditor5/29.0.0/classic/ckeditor.js"></script>
 
         <!-- Custom Script -->
-        <script src="../../../assets/js/scripts.js"></script>
+        <script src="assets/js/scripts.js"></script>
 
     </body>
 </html> 

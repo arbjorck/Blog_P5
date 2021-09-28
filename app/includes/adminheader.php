@@ -1,6 +1,6 @@
 <header>
     <a class="logo" href="<?php echo BASE_URL . ''; ?>">
-        <h1 class="logo-text"><span>Jean</span>Forteroche</h1>
+        <h1 class="logo-text"><span>NewS</span>canner</h1>
     </a>
     <i class="fa fa-bars menu-toggle"></i>
     <ul class="nav"> 

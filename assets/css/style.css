@@ -2,8 +2,8 @@
 
 * {
     box-sizing: border-box;
-    /* font-family: 'Roboto', sans-serif; */
-    font-family: 'Poppins';
+    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Poppins'; */
 }
 
 body {
@@ -11,6 +11,16 @@ body {
     margin: 0px;
     background-color: #ebebeb;
     /* font-family: 'Roboto', sans-serif; */
+}
+
+.logo-text {
+    font-family: 'Poppins';
+    color: black;
+}
+
+.logo-text span {
+    color:#c90000;
+    font-family: 'Poppins';
 }
 
 h1 {
@@ -43,7 +53,8 @@ a {
 
 .btn {
     padding: .5rem 1rem; 
-    background: #04a2fd;
+    margin-right: 5px;
+    background: #0b2081;
     color: white;
     border: 1px solid transparent;
     border-radius: .25rem;
@@ -61,7 +72,7 @@ a {
 
 .btn:hover {
      color: White !important;
-     background: #0582ca;
+     background: #041149;
 }
 
 .text-input {
@@ -101,15 +112,16 @@ a {
 
 header {
     background:white;
-    /* background: #043d6b; */
-    /* background:#02adfc; */
     height: 73.1px; 
     z-index: 8888;
+    /* position: fixed; */
+    width: 100%;
 }
 
 header * {
     /* color: white; */
     color: black;
+    font-family: 'Poppins';
 }
 
 header .logo {
@@ -125,7 +137,6 @@ header .logo-text {
 }
 
 header .logo-text span {
-    /* color: #0582ca; */
     color:#c90000;
 }
 
@@ -245,7 +256,7 @@ header .menu-toggle {
 .post-slider .post-wrapper .post {
     background-color: white;
     width: 300px;
-    height: 330px;
+    height: 300px;
     margin: 0px 10px;
     display: inline-block;
     border-radius: 5px;
@@ -253,17 +264,24 @@ header .menu-toggle {
 }
 
 .post-slider .post-wrapper .post .post-info {
-    height: 130px;
+    height: 30%;
     padding: 0px 10px;
 }
 
 
 .post-slider .post-wrapper .post .slider-image {
     width: 100%;
-    height: auto;
+    height: 70%;
     overflow: hidden;
+    display: flex;
+    align-items: center;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+}
+
+.post-slider .post-wrapper .post .slider-image  img {
+    width: 100%;
+    height: auto;
 }
 
 /* CONTENT */
@@ -342,6 +360,16 @@ header .menu-toggle {
     width: 40%;
     height: 100%;
     float: left;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.content .main-content .post .post-image img {
+    width: auto;
+    height: 100%;
 }
 
 .content .main-content .post .post-preview {
@@ -470,10 +498,20 @@ header .menu-toggle {
 
 
 /* FOOTER */
+
+/* .footer .footer-content h1, h2, p, a {
+    font-family: 'Poppins';
+    font-weight: 400;
+}
+
+.footer .footer-content h1 {
+    font-weight: 600;
+} */
+
 .footer {
-    background: rgb(43, 42, 42);
-    color:  rgb(148, 148, 148);
-    height: 400px;
+    background: #041149;
+    color: white;
+    height: 500px;
     position: relative;
     margin-top: 100px;
 }
@@ -494,10 +532,6 @@ header .menu-toggle {
 
 }
 
-.footer .foter-content .about h1 span {
-    color: #04a2fd;
-}
-
 .footer .foter-content .about .contact span {
     display: block;
     font-size: 1.1em;
@@ -505,21 +539,21 @@ header .menu-toggle {
 }
 
 .footer .foter-content .about .socials a {
-    border: 1px solid gray;
+    color: white;
     width: 45px;
     height: 41px;
-    padding-top: 5px;
+    padding-top: 1px;
     margin-right: 5px;
     text-align: center;
     display: inline-block;
     font-size: 1.6em;
     border-radius: 5px;
-    transition: all .3s;
+    border: 1px solid white;
 }
 
 .footer .foter-content .about .socials a:hover {
-    border: 1px solid white;
-    color: white;
+    border: 1px solid #c90000;
+    color:#c90000;
     transition: all .3s;
 }
 
@@ -538,16 +572,13 @@ header .menu-toggle {
 }
 
 .footer .foter-content .contact-form .contact-input {
-    background: rgb(26, 25, 25);
-    color: rgb(216, 215, 215);
+    background: #020929;
+    color: white;
     margin-bottom: 10px;
     line-height: 1.5rem;
     padding: .9rem 1.4rem;
     border: none;
 }
-
-/* .footer .foter-content .contact-form .contact-input:focus {
-} */
 
 .footer .foter-content .contact-form .contact-btn {
     float: right;
@@ -555,8 +586,8 @@ header .menu-toggle {
 }
 
 .footer .footer-bottom {
-    background: rgb(32, 32, 32);
-    color: rgb(216, 215, 215);
+    background: #020929;
+    color: white;
     height: 50px;
     width: 100%;
     text-align: center;

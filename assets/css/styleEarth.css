@@ -14,35 +14,64 @@
     min-height: 100vh;
     overflow: hidden;
 } */
+.planet-text h3 {
+    font-family: 'Roboto', sans-serif;
+    /* color: #34caf8; */
+    color: white;
+}
+
+.planet-text h2 {
+    font-family: 'Poppins';
+    color: white;
+    font-size: 5em;
+    font-weight: 600;
+}
+
+.planet-text h2 span {
+    color:#c90000;
+    font-family: 'Poppins';
+}
 
 .planet {
     display: flex;
     flex-direction: column;
 }
 
-.planet h2 {
+/* .planet h2 {
     color: #fff;
-    font-size: 4em;
     margin-bottom: 40px;
     font-weight: 600;
-}
+} */
 
 .planet .container {
-    width: 100%;
+    width: 45%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding-top: 24px;
+}
+
+.planet-text {
+    width: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
 }
 
 .planetEarth {
     position: relative;
     min-width: 100%;
-    height: 500px;
+    height: 450px;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     /* background: #182357; */
     background: #041149;
+    /* padding-top: 73px; */
+    flex-direction: row;
+
 }
 
 .planetEarth .loader {

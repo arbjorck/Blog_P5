@@ -26,8 +26,6 @@ class TopicsController
 
     $_SESSION['message'] = 'Le thème a été créé avec succès.';
     $_SESSION['type'] = 'success';
-    header('location: ' . BASE_URL . '/views/admin/topics/index.php?admin=topics');
-    exit();
   }
 
   public function selectOneTopic($table, $data)
@@ -42,8 +40,6 @@ class TopicsController
 
     $_SESSION['message'] = 'Thème suprimé avec succès';
     $_SESSION['type'] = 'success';
-    header('location: ' . BASE_URL . '/views/admin/topics/index.php?admin=topics');
-    exit();
   }
 
   public function updateTopic($table, $id, $data)
@@ -52,7 +48,5 @@ class TopicsController
 
     $_SESSION['message'] = 'Thème actualisé avec succès';
     $_SESSION['type'] = 'success';
-    header('location: ' . BASE_URL . '/views/admin/topics/index.php?admin=topics');
-    exit();
   }
 }

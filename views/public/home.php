@@ -29,6 +29,10 @@
             <div class="loader"><span></span></div>
             <div class="earth"></div>
         </div>
+        <div class="planet-text">
+            <h2><span>NewS</span>canner</h2>
+            <h3>Soyez toujours à la pointe de l'actualité </h3>
+        </div>
     </div>
     <!-- // Earth CSS  -->
  
@@ -44,7 +48,9 @@
             <div class="post-wrapper">
                 <?php foreach ($trendPosts as $trendPost): ?>
                     <div class="post">
-                        <img src="<?php echo BASE_URL .'/assets/images/' . $trendPost['image']; ?>" alt="" class="slider-image">
+                        <div class="slider-image">
+                            <img src="<?php echo BASE_URL .'/assets/images/' . $trendPost['image']; ?>" alt="">
+                        </div>
                         <div class="post-info">
                             <h4><a href="index.php?id=<?php echo $trendPost['id']; ?>"><?php echo $trendPost['title']; ?></a></h4>
                             <i class="far fa-user"><?php echo $trendPost['username']; ?></i>
@@ -72,7 +78,9 @@
                     $post = $recentPosts;
                 } foreach ($post as $post): ?>
                     <div class="post clearfix">
-                        <img src="<?php echo BASE_URL .'/assets/images/' . $post['image']; ?>" alt="" class="post-image">
+                        <div class="post-image">
+                            <img src="<?php echo BASE_URL .'/assets/images/' . $post['image']; ?>" alt="">
+                        </div>
                         <div class="post-preview">
                             <h3><a href="index.php?id=<?php echo $post['id']; ?>"><?php echo $post['title']; ?></a></h3>
                             <i class="far fa-user"><?php echo $post['username']; ?></i>

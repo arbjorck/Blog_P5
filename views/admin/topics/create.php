@@ -1,8 +1,3 @@
-<?php
-include("../../path.php");
-include(ROOT_PATH . "../../index.php");
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -25,14 +20,14 @@ include(ROOT_PATH . "../../index.php");
             <!-- Admin Content -->
             <div class="admin-content">
                 <div class="button-group">
-                    <a href="create.php?create=topic" class="btn btn-big">Ajouter Thème</a>
+                    <a href="index.php?create=topic" class="btn btn-big">Ajouter Thème</a>
                     <a href="index.php?admin=topics" class="btn btn-big">Gérer Thèmes</a>
                 </div>
 
                 <div class="content">
                     <h2 class="page-title">Ajouter Thème</h2>
                     <?php include(ROOT_PATH . "../../app/helpers/formErrors.php"); ?>
-                    <form action="create.php" method="post">
+                    <form action="index.php?create=topic" method="post">
                         <div>
                             <label>Nom</label>
                             <input type="text" name="name" value="<?php echo $name; ?>" class="text-input">
@@ -61,7 +56,7 @@ include(ROOT_PATH . "../../index.php");
         <script src="https://cdn.ckeditor.com/ckeditor5/29.0.0/classic/ckeditor.js"></script>
 
         <!-- Custom Script -->
-        <script src="../../../assets/js/scripts.js"></script>
+        <script src="assets/js/scripts.js"></script>
 
     </body>
 </html> 

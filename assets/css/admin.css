@@ -8,8 +8,8 @@ html, body {
 } */
 
 header {
-    background:rgb(43, 42, 42);
-    /* background: rgb(26, 25, 25); */
+    /* background: white; */
+    background: white;
 }
 
 .admin-wrapper {
@@ -20,7 +20,7 @@ header {
 .admin-wrapper .left-sidebar {
     flex: 2;
     height: 100%;
-    background-color: #0582ca;
+    background-color: #0b2081;
 }
 
 .admin-wrapper .left-sidebar ul {
@@ -33,11 +33,11 @@ header {
 .admin-wrapper .left-sidebar ul a {
     padding: 18px;
     display: block;
-    border-bottom: 1px solid #04a2fd;
+    border-bottom: 1px solid #041149;
 }
 
 .admin-wrapper .left-sidebar ul a:hover {
-    background: #04a2fd;
+    background: #041149;
 }
 
 .admin-wrapper .admin-content {

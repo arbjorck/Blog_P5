@@ -31,13 +31,13 @@ include(ROOT_PATH . "../../index.php");
 
     <body>
     <!-- Header -->
-    <?php include(ROOT_PATH. "../../app/includes/adminheader.php");?>
+    <?php include(ROOT_PATH. "../../app/includes/adminHeader.php");?>
 
         <!-- Admin Page Wrapper -->
         <div class="admin-wrapper"> 
 
             <!-- Left Sidebar -->
-            <?php include(ROOT_PATH. "../../app/includes/adminsidebar.php");?>
+            <?php include(ROOT_PATH. "../../app/includes/adminSidebar.php");?>
 
             <!-- Admin Content -->
             <div class="admin-content">

@@ -16,15 +16,15 @@
                 </a>
                 <ul>
                     <?php if($_SESSION['admin']): ?>
-                        <li><a href="<?php echo BASE_URL . '/views/admin/dashboard.php?dashboard' ?>" class="dashboard">Tableau de Bord</a></li>
+                        <li><a href="<?php echo BASE_URL . '/index.php?dashboard' ?>" class="dashboard">Tableau de Bord</a></li>
                     <?php endif; ?>
 
-                    <li><a href="<?php echo BASE_URL . '/views/public/logout.php' ?>" class="logout">Se déconnecter</a></li>
+                    <li><a href="<?php echo BASE_URL . '/index.php?logout' ?>" class="logout">Se déconnecter</a></li>
                 </ul>
             </li>
             <?php else: ?>
-                <li><a href="<?php echo BASE_URL . '/views/public/register.php?register' ?>">Créer un compte</a></li>
-                <li><a href="<?php echo BASE_URL . '/views/public/login.php?login' ?>">Se connecter</a></li>
+                <li><a href="<?php echo BASE_URL . '/index.php?register' ?>">Créer un compte</a></li>
+                <li><a href="<?php echo BASE_URL . '/index.php?login' ?>">Se connecter</a></li>
             <?php endif; ?>
         </ul>
 </header>

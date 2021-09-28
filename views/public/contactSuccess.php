@@ -29,7 +29,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <!-- Custom Script -->
-    <script src="../../assets/js/scripts.js"></script>
+    <script src="assets/js/scripts.js"></script>
 
 </body>
 </html>

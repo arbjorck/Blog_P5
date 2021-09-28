@@ -1,8 +1,3 @@
-<?php
-include("../path.php");
-require(ROOT_PATH . "../../index.php");
-?> 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,8 +9,8 @@ require(ROOT_PATH . "../../index.php");
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
     <!-- Custom Styling -->
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/css/style_media.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style_media.css">
 
     <title><?php echo $post['title']; ?> | JeanForteroche</title>
 </head>
@@ -54,11 +49,11 @@ require(ROOT_PATH . "../../index.php");
                     <div class="section popular">
                         <h3 class="section-title">Populaire</h3>
 
-                        <?php foreach ($getPublishedPosts as $p): ?>
+                        <?php foreach ($trendPosts as $trendPost): ?>
                             <div class="post clearfix">
-                                <img src="<?php echo BASE_URL . '/assets/images/' .  $p['image']; ?>" alt="">
+                                <img src="<?php echo BASE_URL . '/assets/images/' .  $trendPost['image']; ?>" alt="">
                                 <a href="" class="title">
-                                    <h4><a href="single.php?id=<?php echo $p['id']; ?>"><?php echo $p['title']; ?></a></h4>
+                                    <h4><a href="index.php?id=<?php echo $trendPost['id']; ?>"><?php echo $trendPost['title']; ?></a></h4>
                             </div>
                         <?php endforeach; ?>
                     </div>
@@ -80,7 +75,7 @@ require(ROOT_PATH . "../../index.php");
                 <div class="comments-section">
                     <h3 class="comments-title">Commentaires</h3>
 
-                    <form action="single.php?id=<?php echo $post['id']; ?>" method="post">
+                    <form action="index.php?id=<?php echo $post['id']; ?>" method="post">
                         <div>
                             <label>Ajouter un commentaire</label>
                             <textarea type="textarea" name="comment" value="<?php echo $comment; ?>" class="text-input"></textarea>
@@ -110,7 +105,7 @@ require(ROOT_PATH . "../../index.php");
                                 <i class="far fa-user"> <?php echo $comment['username']; ?></i> 
                                 &nbsp;
                                 <i class="far fa-calendar"> <?php echo date('F j, Y', strtotime($comment['created_at'])); ?></i>
-                                <a href="single.php?id=<?php echo $post['id'] ?>&report=1&comment_id=<?php echo $comment['id'] ?>" class="btn-report">Signaler</a>
+                                <a href="index.php?id=<?php echo $post['id'] ?>&report=1&comment_id=<?php echo $comment['id'] ?>" class="btn-report">Signaler</a>
                                 <p class="preview-text">
                                     <?php echo html_entity_decode($comment['comment']); ?>
                                 </p>
@@ -134,7 +129,7 @@ require(ROOT_PATH . "../../index.php");
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
    
     <!-- Custom Script -->
-    <script src="/../../assets/js/scripts.js"></script>
+    <script src="assets/js/scripts.js"></script>
 </body>
 
 </html>

@@ -1,8 +1,3 @@
-<?php
-include("../../path.php");
-include(ROOT_PATH . "../../index.php");
-?>
-
 <!DOCTYPE html>
 <html lang="en"> 
     <head>
@@ -18,12 +13,12 @@ include(ROOT_PATH . "../../index.php");
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
         <!-- Custom Styling -->
-        <link rel="stylesheet" href="../../../assets/css/style.css">
-        <link rel="stylesheet" href="../../../assets/css/style_media.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/style_media.css">
 
         <!-- Admin Styling -->
-        <link rel="stylesheet" href="../../../assets/css/admin.css"> 
-        <link rel="stylesheet" href="../../../assets/css/admin_media.css">
+        <link rel="stylesheet" href="assets/css/admin.css"> 
+        <link rel="stylesheet" href="assets/css/admin_media.css">
 
         <title>Admin - Gérer Commentaires</title>
     </head>
@@ -94,7 +89,7 @@ include(ROOT_PATH . "../../index.php");
         <script src="https://cdn.ckeditor.com/ckeditor5/29.0.0/classic/ckeditor.js"></script>
 
         <!-- Custom Script -->
-        <script src="../../../assets/js/scripts.js"></script>
+        <script src="assets/js/scripts.js"></script>
 
     </body>
 </html> 

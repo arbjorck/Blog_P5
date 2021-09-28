@@ -31,8 +31,6 @@ class DbModel
         if (isset($data)) {
             $i = 1;
             foreach($data as $key => &$value) {
-                //$value = "%" . $value . "%";
-                //echo 'value' . $value . 'param'. $param;
                 $stmt->bindParam($i, $value, $param[$key]);
                 $i++;
             }
@@ -52,9 +50,6 @@ class DbModel
             $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $records;
         } else {
-            // return records that match conditions...
-            // $sql = "SELECT * FROM $table WHERE username='Sara' AND admin=1;
-
             $i = 0;
             foreach ($conditions as $key => $value) {
                 if ($i === 0) {
@@ -92,6 +87,16 @@ class DbModel
         $records = $stmt->fetchAll();
         $rec = $records[0];
         return $rec;
+    }
+
+    public function countViews($table, $id)
+    {
+        $conn = $this->dbConnect->dbConnect();
+        $sql = "UPDATE $table SET views=views+1 WHERE id=?";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([$id]);
+        //return $stmt->affected_rows;
     }
 
     public function create($table, $data)
@@ -139,37 +144,52 @@ class DbModel
     {
         $conn = $this->dbConnect->dbConnect();
         $sql = "DELETE FROM $table WHERE id=?";
-        //$stmt = $this->executeQuery($sql, ['id' => $id]);
-        //return $stmt->affected_rows;
 
         $stmt = $conn->prepare($sql);
         $stmt->execute([$id]);
         return $stmt->affected_rows;
     }
 
-    public function getPublishedPosts()
+    public function publishedPosts()
     {
         $conn = $this->dbConnect->dbConnect();
-        $sql = "SELECT p.*, u.username FROM posts AS p JOIN users AS u ON p.user_id=u.id WHERE p.published=1";
+        $sql = "SELECT p.*, u.username FROM posts AS p JOIN users AS u ON p.user_id=u.id WHERE p.published=1 ORDER BY created_at DESC";
 
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $records;
+    }
 
-        // $stmt = $this->executeQuery($sql, ['published' => 1]);
-        // $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        // return $records;
+    public function trendPosts()
+    {
+        $conn = $this->dbConnect->dbConnect();
+        $sql = "SELECT p.*, u.username FROM posts AS p JOIN users AS u ON p.user_id=u.id WHERE p.published=1 ORDER BY views DESC LIMIT 4";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $records;
+    }
+
+    public function recentPosts()
+    {
+        $conn = $this->dbConnect->dbConnect();
+        $sql = "SELECT p.*, u.username FROM posts AS p JOIN users AS u ON p.user_id=u.id WHERE p.published=1 ORDER BY created_at DESC LIMIT 10";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $records;
     }
 
     public function getPostsByTopicId($topicId)
     {
         $conn = $this->dbConnect->dbConnect();
-        $sql = "SELECT p.*, u.username FROM posts AS p JOIN users AS u ON p.user_id=u.id WHERE p.published=? AND topic_id=?";
+        $sql = "SELECT p.*, u.username FROM posts AS p JOIN users AS u ON p.user_id=u.id WHERE p.published=? AND topic_id=? ORDER BY created_at DESC";
 
         $stmt = $this->executeQuery($sql, ['published' => 1, 'topic_id' => $topicId]);
         $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    //$rec = $records[0];
         return $records;
     }
 
@@ -177,8 +197,7 @@ class DbModel
     {
         $match = '%' . $term . '%';
         $conn = $this->dbConnect->dbConnect();
-        $sql = "SELECT 
-                    p.*, u.username 
+        $sql = "SELECT p.*, u.username 
                 FROM posts AS p 
                 JOIN users AS u 
                 ON p.user_id=u.id 
@@ -193,11 +212,7 @@ class DbModel
     public function getReportedComments($postId)
     {
         $conn = $this->dbConnect->dbConnect();
-        $sql = "SELECT c.*, u.username FROM comments AS c JOIN users AS u ON c.user_id=u.id WHERE c.published='1' AND c.reported='1' AND c.post_id=? ";
-
-        // $stmt = $this->executeQuery($sql, ['published' => 1, 'reported' => 1, 'post_id' => $postId]);
-        // $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        // return $records;
+        $sql = "SELECT c.*, u.username FROM comments AS c JOIN users AS u ON c.user_id=u.id WHERE c.published='1' AND c.reported='1' AND c.post_id=? ORDER BY created_at DESC";
 
         $stmt = $conn->prepare($sql);
         $stmt->execute([$postId]);
@@ -208,11 +223,7 @@ class DbModel
     public function getPublishedComments($postId)
     {
         $conn = $this->dbConnect->dbConnect();
-        $sql = "SELECT c.*, u.username FROM comments AS c JOIN users AS u ON c.user_id=u.id WHERE c.published=1 AND c.reported=0 AND c.post_id=? ";
-
-        // $stmt = $this->executeQuery($sql, ['published' => 1, 'reported' => 0, 'post_id' => $postId]);
-        // $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        // return $records;
+        $sql = "SELECT c.*, u.username FROM comments AS c JOIN users AS u ON c.user_id=u.id WHERE c.published=1 AND c.reported=0 AND c.post_id=? ORDER BY created_at DESC";
 
         $stmt = $conn->prepare($sql);
         $stmt->execute([$postId]);
@@ -225,7 +236,8 @@ class DbModel
         $conn = $this->dbConnect->dbConnect();
         $sql = "SELECT c.*, u.username, p.title FROM comments AS c
         LEFT JOIN users AS u ON c.user_id=u.id
-        LEFT JOIN posts AS p ON c.post_id=p.id";
+        LEFT JOIN posts AS p ON c.post_id=p.id
+        ORDER BY created_at DESC";
 
         $stmt = $conn->prepare($sql);
         $stmt->execute();
@@ -238,7 +250,8 @@ class DbModel
         $conn = $this->dbConnect->dbConnect();
         $sql = "SELECT p.*, u.username, t.name FROM posts AS p
         LEFT JOIN users AS u ON p.user_id=u.id
-        LEFT JOIN topics AS t ON p.topic_id=t.id";
+        LEFT JOIN topics AS t ON p.topic_id=t.id
+        ORDER BY created_at DESC";
 
         $stmt = $conn->prepare($sql);
         $stmt->execute();

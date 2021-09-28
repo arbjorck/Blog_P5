@@ -1,19 +1,3 @@
-<?php
-include("../path.php");
-
-$errors = array();
-$username ='';
-$admin = '';
-$email ='';
-$password ='';
-$passwordConf ='';
-
-if(isset($_POST['login-btn']))
-{
-    require(ROOT_PATH . "../../index.php");
-}
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,8 +8,8 @@ if(isset($_POST['login-btn']))
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
     <!-- Custom Styling -->
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/css/style_media.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style_media.css">
 
     <title>Blog</title>
 </head>
@@ -36,7 +20,7 @@ if(isset($_POST['login-btn']))
     <?php include(ROOT_PATH . "../../app/includes/header.php"); ?>
 
     <div class="auth-content">
-        <form action="login.php" method="post">
+        <form action="index.php?login" method="post">
             <h3 class="form-title">Connexion</h3>
 
             <?php include(ROOT_PATH . "../../app/helpers/formErrors.php"); ?>
@@ -52,7 +36,7 @@ if(isset($_POST['login-btn']))
             <div>
                 <button type="submit" name="login-btn" class="btn btn-big login">Connexion</button>
             </div>
-            <p>ou <a href="<?php echo BASE_URL . '../../views/public/register.php' ?>">S'inscrire</a></p>
+            <p>ou <a href="<?php echo BASE_URL . '/index.php?register' ?>">S'inscrire</a></p>
         </form>
     </div>
  
@@ -62,7 +46,7 @@ if(isset($_POST['login-btn']))
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <!-- Custom Script -->
-    <script src="../../assets/js/scripts.js"></script>
+    <script src="assets/js/scripts.js"></script>
 
 </body>
 </html>

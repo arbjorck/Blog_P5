@@ -10,9 +10,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
 <!-- Custom Styling -->
-<link rel="stylesheet" href="../../../assets/css/style.css">
-<link rel="stylesheet" href="../../../assets/css/style_media.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style_media.css">
 
 <!-- Admin Styling -->
-<link rel="stylesheet" href="../../../assets/css/admin.css"> 
-<link rel="stylesheet" href="../../../assets/css/admin_media.css">
+<link rel="stylesheet" href="assets/css/admin.css"> 
+<link rel="stylesheet" href="assets/css/admin_media.css">

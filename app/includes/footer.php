@@ -28,7 +28,7 @@
                 <a href="#"><li>Team</li></a>
                 <a href="#"><li>Writters</li></a>
                 <a href="#"><li>Gallery</li></a>
-                <a href="<?php echo BASE_URL . '/views/public/legalNotice.php' ?>"><li>Terms and conditions</li></a>
+                <a href="<?php echo BASE_URL . '/index.php?notice' ?>"><li>Terms and conditions</li></a>
             </ul>
         </div>
 

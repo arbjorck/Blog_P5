@@ -7,7 +7,7 @@ class Middleware
         if (empty($_SESSION ['id'])) {
             $_SESSION['message'] = 'Une authentification est requise.';
             $_SESSION['type'] = 'error';
-            header("location: " . BASE_URL . "/views/public/single.php?id=" . $_GET['id']);
+            header("location: " . BASE_URL . "/index.php?id=" . $_GET['id']);
             exit(0);
         }
     }

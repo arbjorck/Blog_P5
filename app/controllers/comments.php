@@ -26,11 +26,6 @@ class CommentsController
 
     public function deleteComment($table, $id){
         $deleteComment = $this->dbModel->delete($table, $id);
-
-        $_SESSION ['message'] = "Le commentaire a été effacé avec succès.";
-        $_SESSION['type'] = "success";
-        header("location: " . BASE_URL . "/views/admin/comments/index.php?admin=comments");
-        exit();
     }
 
     public function updateComment($table, $id, $data){
@@ -40,10 +35,9 @@ class CommentsController
 
     public function createComment($table, $data){
         $createComment = $this->dbModel->create($table, $data);
-
-        $_SESSION ['message'] = "Le commentaire a été créé avec succès";
+        $_SESSION ['message'] = "Le commentaire a été publié avec succès.";
         $_SESSION['type'] = "success";
-        header("location: " . BASE_URL . "/views/public/single.php?id=" . $_POST['post_id']);
+        header("location: " . BASE_URL . "/index.php?id=" . $_POST['post_id']);
     }
 
     public function getReportedComments($postId)

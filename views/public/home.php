@@ -42,14 +42,14 @@
             <i class="fas fa-chevron-right next"></i>
 
             <div class="post-wrapper">
-                <?php foreach ($getPublishedPosts as $post): ?>
+                <?php foreach ($trendPosts as $trendPost): ?>
                     <div class="post">
-                        <img src="<?php echo BASE_URL .'/assets/images/' . $post['image']; ?>" alt="" class="slider-image">
+                        <img src="<?php echo BASE_URL .'/assets/images/' . $trendPost['image']; ?>" alt="" class="slider-image">
                         <div class="post-info">
-                            <h4><a href="views/public/single.php?id=<?php echo $post['id']; ?>"><?php echo $post['title']; ?></a></h4>
-                            <i class="far fa-user"><?php echo $post['username']; ?></i>
+                            <h4><a href="index.php?id=<?php echo $trendPost['id']; ?>"><?php echo $trendPost['title']; ?></a></h4>
+                            <i class="far fa-user"><?php echo $trendPost['username']; ?></i>
                             &nbsp;
-                            <i class="far fa-calendar"><?php echo date('F j, Y', strtotime($post['created_at'])); ?></i>
+                            <i class="far fa-calendar"><?php echo date('F j, Y', strtotime($trendPost['created_at'])); ?></i>
                         </div>
                 </div>  
                 <?php endforeach; ?>
@@ -69,22 +69,26 @@
                 } elseif(isset($_POST['search-term'])){
                     $post = $searchPosts;
                 } else {
-                    $post = $getPublishedPosts;
+                    $post = $recentPosts;
                 } foreach ($post as $post): ?>
                     <div class="post clearfix">
                         <img src="<?php echo BASE_URL .'/assets/images/' . $post['image']; ?>" alt="" class="post-image">
                         <div class="post-preview">
-                            <h3><a href="views/public/single.php?id=<?php echo $post['id']; ?>"><?php echo $post['title']; ?></a></h3>
+                            <h3><a href="index.php?id=<?php echo $post['id']; ?>"><?php echo $post['title']; ?></a></h3>
                             <i class="far fa-user"><?php echo $post['username']; ?></i>
                             &nbsp;
                             <i class="far fa-calendar"><?php echo date('F j, Y', strtotime($post['created_at'])); ?></i>
                             <p class="preview-text">
                                 <?php echo html_entity_decode(substr($post['body'], 0, 150) . '...'); ?>
                             </p>
-                            <a href="views/public/single.php?id=<?php echo $post['id']; ?>" class="btn read-more">Lire</a>
+                            <a href="index.php?id=<?php echo $post['id']; ?>" class="btn read-more">Lire</a>
                         </div>
                     </div>
                 <?php endforeach; ?>
+
+                <div>
+                    <a href="index.php?posts" class="btn">Voir les autres articles</a>
+                </div>
             </div>
 
             <!-- // Sidebar -->

@@ -1,8 +1,3 @@
-<?php
-include("../../path.php");
-include(ROOT_PATH . "../../index.php");
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -18,12 +13,12 @@ include(ROOT_PATH . "../../index.php");
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
         <!-- Custom Styling -->
-        <link rel="stylesheet" href="../../../assets/css/style.css">
-        <link rel="stylesheet" href="../../../assets/css/style_media.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/style_media.css">
 
         <!-- Admin Styling -->
-        <link rel="stylesheet" href="../../../assets/css/admin.css"> 
-        <link rel="stylesheet" href="../../../assets/css/admin_media.css">
+        <link rel="stylesheet" href="assets/css/admin.css"> 
+        <link rel="stylesheet" href="assets/css/admin_media.css">
 
         <title>Admin - Ajouter Post</title>
     </head>
@@ -42,7 +37,7 @@ include(ROOT_PATH . "../../index.php");
             <!-- Admin Content -->
             <div class="admin-content">
                 <div class="button-group">
-                    <a href="create.php?create=post" class="btn btn-big">Ajouter Post</a>
+                    <a href="index.php?create=post" class="btn btn-big">Ajouter Post</a>
                     <a href="index.php?admin=posts" class="btn btn-big">Gérer Posts</a>
                 </div>
 
@@ -51,7 +46,7 @@ include(ROOT_PATH . "../../index.php");
 
                     <?php include(ROOT_PATH . '../../app/helpers/formErrors.php'); ?>
 
-                    <form action="create.php?create=post" method="post" enctype="multipart/form-data">
+                    <form action="index.php?create=post" method="post" enctype="multipart/form-data">
                         <div>
                             <label>Titre</label>
                             <input type="text" name="title" value="<?php echo $title ?>" class="text-input">
@@ -110,7 +105,7 @@ include(ROOT_PATH . "../../index.php");
         <script src="https://cdn.ckeditor.com/ckeditor5/29.0.0/classic/ckeditor.js"></script>
 
         <!-- Custom Script -->
-        <script src="../../../assets/js/scripts.js"></script>
+        <script src="assets/js/scripts.js"></script>
 
     </body>
 </html> 

@@ -1,8 +1,3 @@
-<?php
-include("../../path.php");
-include(ROOT_PATH . "../../index.php");
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -25,7 +20,7 @@ include(ROOT_PATH . "../../index.php");
             <!-- Admin Content -->
             <div class="admin-content">
                 <div class="button-group">
-                    <a href="create.php?create=post" class="btn btn-big">Ajouter Post</a>
+                    <a href="index.php?create=post" class="btn btn-big">Ajouter Post</a>
                     <a href="index.php?admin=posts" class="btn btn-big">Gérer Posts</a>
                 </div>
 
@@ -50,12 +45,12 @@ include(ROOT_PATH . "../../index.php");
                                     <td><?php echo $post['name'] ?></td>
                                     <td><?php echo $post['title'] ?></td>
                                     <td><?php echo $post['username']; ?></td>
-                                    <td><a href="edit.php?edit_post_id=<?php echo $post['id']; ?>" class="edit">Éditer</a></td>
-                                    <td><a href="edit.php?delete_id_post=<?php echo $post['id']; ?>" class="delete">Effacer</a></td>
+                                    <td><a href="index.php?edit_post_id=<?php echo $post['id']; ?>" class="edit">Éditer</a></td>
+                                    <td><a href="index.php?delete_id_post=<?php echo $post['id']; ?>" class="delete">Effacer</a></td>
                                     <?php if ($post['published']): ?>
-                                        <td><a href="edit.php?post_published=0&post_published_id=<?php echo $post['id'] ?>" class="unpublish">dépublier</a></td>
+                                        <td><a href="index.php?post_published=0&post_published_id=<?php echo $post['id'] ?>" class="unpublish">dépublier</a></td>
                                     <?php else:?>
-                                        <td><a href="edit.php?post_published=1&post_published_id=<?php echo $post['id'] ?>" class="publish">publier</a></td>
+                                        <td><a href="index.php?post_published=1&post_published_id=<?php echo $post['id'] ?>" class="publish">publier</a></td>
                                     <?php endif; ?>
                                 </tr>
                             <?php endforeach; ?>
@@ -77,7 +72,7 @@ include(ROOT_PATH . "../../index.php");
         <script src="https://cdn.ckeditor.com/ckeditor5/29.0.0/classic/ckeditor.js"></script>
 
         <!-- Custom Script -->
-        <script src="../../../assets/js/scripts.js"></script>
+        <script src="assets/js/scripts.js"></script>
 
     </body>
 </html> 

@@ -5,7 +5,7 @@ include("../path.php");
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include(ROOT_PATH . "app/includes/head.php"); ?>
+    <?php include(ROOT_PATH . "../../app/includes/head.php"); ?>
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">

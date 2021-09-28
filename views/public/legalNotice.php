@@ -1,7 +1,3 @@
-<?php
-include("../path.php");
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,8 +8,8 @@ include("../path.php");
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
     <!-- Custom Styling -->
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/css/style_media.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style_media.css">
 
     <title>Blog</title>
 </head>

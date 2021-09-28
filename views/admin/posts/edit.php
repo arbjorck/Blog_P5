@@ -1,8 +1,3 @@
-<?php
-include("../../path.php");
-include(ROOT_PATH . "../../index.php");
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -25,7 +20,7 @@ include(ROOT_PATH . "../../index.php");
             <!-- Admin Content -->
             <div class="admin-content">
                 <div class="button-group">
-                    <a href="create.php?create=post" class="btn btn-big">Ajouter Post</a>
+                    <a href="index.php?create=post" class="btn btn-big">Ajouter Post</a>
                     <a href="index.php?admin=posts" class="btn btn-big">Gérer Posts</a>
                 </div>
 
@@ -33,7 +28,7 @@ include(ROOT_PATH . "../../index.php");
                     <h2 class="page-title">Éditer Post</h2>
 
                     <?php include(ROOT_PATH . "../../app/helpers/formErrors.php"); ?>
-                    <form action="edit.php?edit_id=<?php echo $id ?>" method="post" enctype="multipart/form-data">
+                    <form action="index.php?edit_id=<?php echo $id ?>" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="id" value="<?php echo $id ?>">    
                         <div>
                             <label>Titre</label>
@@ -93,7 +88,7 @@ include(ROOT_PATH . "../../index.php");
         <script src="https://cdn.ckeditor.com/ckeditor5/29.0.0/classic/ckeditor.js"></script>
 
         <!-- Custom Script -->
-        <script src="../../../assets/js/scripts.js"></script>
+        <script src="assets/js/scripts.js"></script>
 
     </body>
 </html> 

@@ -1,8 +1,3 @@
-<?php
-include("../../path.php");
-include(ROOT_PATH . "../../index.php");
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -34,7 +29,7 @@ include(ROOT_PATH . "../../index.php");
                     
                     <?php include(ROOT_PATH . "../../app/helpers/formErrors.php"); ?>
 
-                    <form action="create.php" method="post">
+                    <form action="index.php?create=user" method="post">
                         <div>
                             <label>Utilisateur</label>
                             <input type="text" name="username" value="<?php echo $username; ?>" class="text-input">
@@ -65,7 +60,7 @@ include(ROOT_PATH . "../../index.php");
                             <?php endif; ?>
                         </div>
                         <div>
-                            <button type="submit" name="create-admin" class="btn btn-big">Ajouter Utilisateur</button>
+                            <button type="submit" name="create-user" class="btn btn-big">Ajouter Utilisateur</button>
                         </div>
                     </form>
                 </div>

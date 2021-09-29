@@ -164,7 +164,7 @@ class DbModel
     public function trendPosts()
     {
         $conn = $this->dbConnect->dbConnect();
-        $sql = "SELECT p.*, u.username FROM posts AS p JOIN users AS u ON p.user_id=u.id WHERE p.published=1 ORDER BY views DESC LIMIT 4";
+        $sql = "SELECT p.*, u.username FROM posts AS p JOIN users AS u ON p.user_id=u.id WHERE p.published=1 ORDER BY views DESC LIMIT 6";
 
         $stmt = $conn->prepare($sql);
         $stmt->execute();
@@ -175,7 +175,7 @@ class DbModel
     public function recentPosts()
     {
         $conn = $this->dbConnect->dbConnect();
-        $sql = "SELECT p.*, u.username FROM posts AS p JOIN users AS u ON p.user_id=u.id WHERE p.published=1 ORDER BY created_at DESC LIMIT 10";
+        $sql = "SELECT p.*, u.username FROM posts AS p JOIN users AS u ON p.user_id=u.id WHERE p.published=1 ORDER BY created_at DESC LIMIT 4";
 
         $stmt = $conn->prepare($sql);
         $stmt->execute();

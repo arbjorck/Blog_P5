@@ -1,10 +1,3 @@
-<?php
-include("../../path.php");
-include(ROOT_PATH . "../../index.php");
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -27,7 +20,7 @@ include(ROOT_PATH . "../../index.php");
             <!-- Admin Content -->
             <div class="admin-content">
                 <div class="button-group">
-                    <a href="create.php?create=user" class="btn btn-big">Ajouter Utilisateur</a>
+                    <a href="index.php?create=user" class="btn btn-big">Ajouter Utilisateur</a>
                     <a href="index.php?admin=users" class="btn btn-big">Gérer Utilisateurs</a>
                 </div>
 
@@ -36,7 +29,7 @@ include(ROOT_PATH . "../../index.php");
 
                     <?php include(ROOT_PATH . "../../app/helpers/formErrors.php"); ?>
                     
-                    <form action="edit.php?edit_id=<?php echo $id ?>" method="post">
+                    <form action="index.php?edit_user_id=<?php echo $id ?>" method="post">
                         <input type="hidden" name="id" value="<?php echo $id ?>">    
                         <div>
                             <label>Utilisateur</label>

@@ -28,13 +28,22 @@
                     <h2 class="page-title">Gérer Posts</h2>
 
                     <?php include(ROOT_PATH . "../../app/includes/messages.php"); ?>
+
                     <table>
                         <thead>
                             <tr>
-                                <th>SN</th>
-                                <th>Thème</th>
-                                <th>Titre</th>
-                                <th>Auteur</th>
+                                <th>
+                                    <input type="text" class="search-input" placeholder="SN">
+                                </th>
+                                <th>
+                                    <input type="text" class="search-input" placeholder="Thème">
+                                </th>
+                                <th>
+                                    <input type="text" class="search-input" placeholder="Titre">
+                                </th>
+                                <th>
+                                    <input type="text" class="search-input" placeholder="Auteur">
+                                </th>
                                 <th colspan="3">Action</th>
                             </tr>
                         </thead>
@@ -73,6 +82,7 @@
 
         <!-- Custom Script -->
         <script src="assets/js/scripts.js"></script>
-
+        <script src="assets/js/scripts_search.js"></script>
+                                    
     </body>
-</html> 
+</html>

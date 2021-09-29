@@ -290,6 +290,9 @@ try {
     require(ROOT_PATH . "../../views/admin/topics/create.php");
 
   } elseif (isset($_GET['edit_topic_id'])) {
+    $middleware = new Middleware();
+    $adminOnly = $middleware->adminOnly();
+    
     $topicsController = new TopicsController();
     $topic = $topicsController->selectOneTopic('topics', ['id' => $_GET['edit_topic_id']]);
     $id = $topic['id'];
@@ -339,15 +342,61 @@ try {
 
     $usersController = new UsersController();
     $adminUsers = $usersController->selectAllUsers('users');
+
+    require(ROOT_PATH . "../../views/admin/users/index.php");
+
+  } elseif (isset($_POST['create-user'])) {
+    $middleware = new Middleware();
+    $adminOnly = $middleware->adminOnly();
+
+    $validateUser = new ValidateUser($_POST);
+    $errors = $validateUser->validateUser($_POST);
+    
+    if (count($errors) === 0) {
+        unset($_POST['passwordConf'], $_POST['create-user']);    
+        $_POST['password'] = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        
+        if (isset($_POST['admin'])) {
+            $_POST['admin'] = 1;
+            $usersController = new UsersController();
+            $user_id = $usersController->createUserAdmin('users', $_POST);
+            $adminUsers = $usersController->selectAllUsers('users');
+
+            require(ROOT_PATH . "../../views/admin/users/index.php");
+        } else {
+            $_POST['admin'] = 0;
+            $usersController = new UsersController();
+            $userCreate = $usersController->createUserAdmin('users', $_POST);
+            $user = $usersController->selectOneUser('users', ['id' => $user_id]);
+            $adminUsers = $usersController->selectAllUsers('users');
+
+            require(ROOT_PATH . "../../views/admin/users/index.php");
+        }
+    } else { // keep the well filled inputs in the form
+        $username = $_POST['username'];
+        $admin = isset($_POST['admin']) ? 1 : 0;
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $passwordConf = $_POST['passwordConf'];
+
+        require(ROOT_PATH . "../../views/admin/users/create.php");
+    }
   } elseif (isset($_GET['create']) && $_GET['create'] === 'user') {
     $middleware = new Middleware();
     $adminOnly = $middleware->adminOnly();
+
+    require(ROOT_PATH . "../../views/admin/users/create.php");
+
   } elseif (isset($_GET['delete_id_user'])) {
     $middleware = new Middleware();
     $adminOnly = $middleware->adminOnly();
 
     $usersController = new UsersController();
     $deleteUser = $usersController->deleteUser('users', $_GET['delete_id_user']);
+    $adminUsers = $usersController->selectAllUsers('users');
+
+    require(ROOT_PATH . "../../views/admin/users/index.php");
+
   } elseif (isset($_POST['update-user'])) {
     $middleware = new Middleware();
     $adminOnly = $middleware->adminOnly();
@@ -362,6 +411,9 @@ try {
 
         $usersController = new UsersController();
         $user_id = $usersController->updateUser('users', $id, $_POST);
+        $adminUsers = $usersController->selectAllUsers('users');
+
+        require(ROOT_PATH . "../../views/admin/users/index.php");
 
     } else { // keep the well filled inputs in the form
       //$erro = $errors;
@@ -371,6 +423,11 @@ try {
         $email = $_POST['email'];
         $password = $_POST['password'];
         $passwordConf = $_POST['passwordConf'];
+        
+        $usersController = new UsersController();
+        $adminUsers = $usersController->selectAllUsers('users');
+
+        require(ROOT_PATH . "../../views/admin/users/edit.php");
     }
   } elseif (isset($_GET['edit_user_id'])) {
     $usersController = new UsersController();
@@ -382,31 +439,8 @@ try {
     $passwordConf = $user['password'];
     $admin = $user['admin'] == 1 ? 1 : 0;
 
-  } elseif (isset($_POST['create-admin'])) {
-    $validateUser = new ValidateUser($_POST);
-    $errors = $validateUser->validateUser($_POST);
-    
-    if (count($errors) === 0) {
-        unset($_POST['passwordConf'], $_POST['create-admin']);    
-        $_POST['password'] = password_hash($_POST['password'], PASSWORD_DEFAULT);
-        
-        if (isset($_POST['admin'])) {
-            $_POST['admin'] = 1;
-            $usersController = new UsersController();
-            $user_id = $usersController->createAdmin('users', $_POST);
-        } else {
-            $_POST['admin'] = 0;
-            $usersController = new UsersController();
-            $userCreate = $usersController->createAdmin('users', $_POST);
-            $user = $usersController->selectOneUser('users', ['id' => $user_id]);
-        }
-    } else { // keep the well filled inputs in the form
-        $username = $_POST['username'];
-        $admin = isset($_POST['admin']) ? 1 : 0;
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $passwordConf = $_POST['passwordConf'];
-    }
+    require(ROOT_PATH . "../../views/admin/users/edit.php");
+
   } elseif (isset($_POST['login-btn'])) {
     $validateUser = new ValidateUser($_POST);
     $errors = $validateUser->validateLogin($_POST);

@@ -5,12 +5,12 @@
             <a href="<?php echo BASE_URL . ''?>" class="logo">
                 <h1 class="logo-text"><span>NewS</span>canner</h1>
             </a>                
-            <p>
+            <!-- <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            </p>
+            </p> -->
             <div class="contact">
                 <span><i class="fas fa-phone"></i>&nbsp; 00.00.00.00.00</span>
-                <span><i class="fas fa-envelope"></i>&nbsp; jeanforteroche@blog.com</span>
+                <span><i class="fas fa-envelope"></i>&nbsp; ana-lima-bjorck@blog.com</span>
             </div>
             <div class="socials">
                 <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
@@ -21,14 +21,14 @@
         </div>
 
         <div class="footer-section links">
-            <h2>Quick Links</h2>
+            <h2>Liens</h2>
             <br>
             <ul>
-                <a href="#"><li>Events</li></a>
-                <a href="#"><li>Team</li></a>
-                <a href="#"><li>Writters</li></a>
-                <a href="#"><li>Gallery</li></a>
-                <a href="<?php echo BASE_URL . '/index.php?notice' ?>"><li>Terms and conditions</li></a>
+                <a href="<?php echo BASE_URL . '/index.php' ?>"><li>Accueil</li></a>
+                <a href="<?php echo BASE_URL . '/index.php?give' ?>"><li>Faire un don</li></a>
+                <a href="<?php echo BASE_URL . '/index.php?register' ?>"><li>Créer un compte</li></a>
+                <a href="<?php echo BASE_URL . '/index.php?login' ?>"><li>Se connecter</li></a>
+                <a href="<?php echo BASE_URL . '/index.php?notice' ?>"><li>Mentions Légales</li></a>
             </ul>
         </div>
 

@@ -34,14 +34,14 @@ class UsersController
 
 
         if ($_SESSION['admin']) {
-            header('location: ' . BASE_URL . '/views/admin/dashboard.php?dashboard');
+            header('location: ' . BASE_URL . '/index.php?dashboard');
         }else {
             header('location: ' . BASE_URL . '');
         }
         exit();
     }
 
-    public function createAdmin($table, $data)
+    public function createUserAdmin($table, $data)
     {
         $createUser = $this->dbModel->create($table, $data);
 
@@ -49,13 +49,9 @@ class UsersController
         {
             $_SESSION['message'] = "L'utilisateur a été créé.";
             $_SESSION['type'] = 'success';
-            header('location: ' . BASE_URL . '/views/admin/users/index.php?admin=users');
-            exit();
         } else {
             $_SESSION['message'] = "L'utilisateur admin a été créé.";
             $_SESSION['type'] = 'success';
-            header('location: ' . BASE_URL . '/views/admin/users/index.php?admin=users');
-            exit();
         }
     }
 
@@ -71,8 +67,6 @@ class UsersController
 
         $_SESSION['message'] = "L'utilisateur a été actualisé.";
         $_SESSION['type'] = 'success';
-        header('location: ' . BASE_URL . '/views/admin/users/index.php?admin=users');
-        exit();
     }
 
     public function deleteUser($table, $id)
@@ -81,8 +75,6 @@ class UsersController
 
         $_SESSION['message'] = 'L\'utilisateur a été effacé.';
         $_SESSION['type'] = 'success';
-        header('location: ' . BASE_URL . '/views/admin/users/index.php?admin=users');
-        exit();
     }
 }
 

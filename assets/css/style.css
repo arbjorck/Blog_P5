@@ -597,6 +597,11 @@ header .menu-toggle {
     padding-top: 20px;
 }
 
+.search-input {
+    border: none;
+    outline: none;
+    background: #ebebeb;
+}
 
 
 

@@ -13,7 +13,7 @@
                 </a>
                 <ul>
                     <!-- <li><a href="#">Tableau de Bord</a></li> -->
-                    <li><a href="<?php echo BASE_URL . '/views/public/logout.php'; ?>" class="logout">Se déconnecter</a></li>
+                    <li><a href="<?php echo BASE_URL . '/index.php?logout'; ?>" class="logout">Se déconnecter</a></li>
                 </ul>
             </li>
         <?php endif; ?>

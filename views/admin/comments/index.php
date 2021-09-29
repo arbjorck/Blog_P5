@@ -44,10 +44,18 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>SN</th>
-                                <th>Post</th>
-                                <th>Commentaire</th>
-                                <th>Auteur</th>
+                                <th>
+                                    <input type="text" class="search-input" placeholder="SN">
+                                </th>
+                                <th>
+                                    <input type="text" class="search-input" placeholder="Post">
+                                </th>
+                                <th>
+                                    <input type="text" class="search-input" placeholder="Commentaire">
+                                </th>
+                                <th>
+                                    <input type="text" class="search-input" placeholder="Auteur">
+                                </th>
                                 <th colspan="3">Action</th>
                             </tr>
                         </thead>
@@ -90,6 +98,7 @@
 
         <!-- Custom Script -->
         <script src="assets/js/scripts.js"></script>
+        <script src="assets/js/scripts_search.js"></script>
 
     </body>
 </html> 

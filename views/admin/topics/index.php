@@ -32,8 +32,12 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>SN</th>
-                                <th>Nom</th>
+                                <th>
+                                    <input type="text" class="search-input" placeholder="SN">
+                                </th>
+                                <th>
+                                    <input type="text" class="search-input" placeholder="Thème">
+                                </th>
                                 <th colspan="2">Action</th>
                             </tr>
                         </thead>
@@ -65,6 +69,7 @@
 
         <!-- Custom Script -->
         <script src="assets/js/scripts.js"></script>
+        <script src="assets/js/scripts_search.js"></script>
 
     </body>
 </html> 
